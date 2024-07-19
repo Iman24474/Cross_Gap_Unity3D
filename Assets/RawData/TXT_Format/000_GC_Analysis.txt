@@ -1,0 +1,32 @@
+Gap Judge Project
+
+Date: 7/16/2024 6:08:37 PM
+Participant ID: 000
+Age: 20
+Gender: Male
+
+
+==================== Trial 0 ====================
+Enter Road (s): 						23.1923
+Ped X (m): 								0.0000
+Ped Z (m): 								-1.4940
+Lead Car X (m): 						9.7701
+Lead Car Size (m): 						4.5343
+Tail Car X (m): 						-40.5225
+Tail Car Size (m): 						4.6532
+
+Exit Road (s): 							24.1071
+Ped X (m): 								0.0000
+Ped Z (m): 								1.5230
+Lead Car X (m): 						19.9932
+Lead Car Size (m): 						4.5343
+Tail Car X (m): 						-30.2994
+Tail Car Size (m): 						4.6532
+
+Crossing Time (s): 						0.9148
+Time of Entry (s): 						0.6713
+Time to Spare (s): 						2.5029
+
+Gaps Seen (Actual): 	4.5001 | 3.5006 | 2.0007 | 4.5001 | 
+Gaps Seen (Rounded): 	4.5 | 3.5 | 2.0 | 4.5 | 
+
