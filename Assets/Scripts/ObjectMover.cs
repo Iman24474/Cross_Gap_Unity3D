@@ -14,7 +14,6 @@ public class ObjectMover : MonoBehaviour
     float carXPos;
     bool dataRecording = true;
     bool passedCenterPoint;
-    bool passedCenterPoint1;
     CarSpawner carSpawner;
     CarEntity carEntity;
     HeadMotionAnalysis headMotionAnalysis;

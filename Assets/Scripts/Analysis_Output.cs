@@ -38,7 +38,7 @@ public class Analysis_Output : MonoBehaviour
         }              
                 
 
-        WriteToFile("Gap Judge Project\n" + "\nDate: "
+        WriteToFile("Gap Cross Project\n" + "\nDate: "
         + date + "\nParticipant ID: " + ParticipantId + "\nAge: " + age 
         + "\nGender: " + gender + "\n\n\n");
         
