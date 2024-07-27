@@ -52,7 +52,10 @@ public class ObjectMover : MonoBehaviour
             CreatedCar();
         }
 
-        else if(gameObject.tag == "DestroyedCar" && dataRecording)
+        // Move the gameobject forward along the x-axis
+        gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
+
+        if(gameObject.tag == "DestroyedCar" && dataRecording)
         {
             DestroyCarByRoadCrossing();
             dataRecording = false;
@@ -69,8 +72,6 @@ public class ObjectMover : MonoBehaviour
             dataRecording = false;
         }
 
-        // Move the gameobject forward along the x-axis
-        gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
     

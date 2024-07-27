@@ -97,10 +97,13 @@ public class CarSpawner : MonoBehaviour
             //Set the intantiated car's tag to "ClonedCar"
             pinkCar.tag = "ClonedCar";
 
+            Debug.Log("WaitTime: " + waitTime);
+
         }
 
         else if(customTime >= waitTime)
         {
+            Debug.Log("CustomTime: " + customTime);
             GameObject obj = Instantiate(selectedPrefab, new Vector3(-125f, 0, 0), Quaternion.Euler(-90, 90, 0));
 
             int index = Random.Range(0, colors.Length);
@@ -142,7 +145,9 @@ public class CarSpawner : MonoBehaviour
             // Increment the car entity ID
             selectedPrefab.GetComponent<CarEntity>().entityID++;  
             //Set the intantiated car's tag to "ClonedCar" 
-            obj.tag = "ClonedCar";    
+            obj.tag = "ClonedCar"; 
+
+            Debug.Log("WaitTime: " + waitTime);   
         } 
        
     }

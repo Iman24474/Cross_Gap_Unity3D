@@ -17,7 +17,7 @@ public class TrialTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Trial Num: " + trialNum);
+        
     }
 
     private void OnTriggerEnter(Collider other) {

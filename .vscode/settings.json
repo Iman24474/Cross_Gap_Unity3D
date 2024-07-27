@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CrossGap-2024.sln"
+    "dotnet.defaultSolution": "Cross_Gap_Unity3D.sln"
 }
