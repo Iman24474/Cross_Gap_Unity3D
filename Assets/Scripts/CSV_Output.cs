@@ -39,11 +39,11 @@
 
 
 // 		//internal storage/android/data/yourApp/files/testFile.txt
-//         myFilePath = Application.dataPath + "/RawData/CSV_Format/" + ParticipantId + "_GJ.csv";
+//         myFilePath = Application.dataPath + "/RawData/CSV_Format/" + ParticipantId + "_GC.csv";
 
 // 		while(File.Exists(myFilePath))
 //         {
-//             myFilePath = Application.dataPath + "/RawData/CSV_Format/" + ParticipantId + "_GJ_" + duplicate + ".csv";
+//             myFilePath = Application.dataPath + "/RawData/CSV_Format/" + ParticipantId + "_GC_" + duplicate + ".csv";
 //             duplicate++;
 //         }  
 

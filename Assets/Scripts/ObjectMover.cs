@@ -43,6 +43,16 @@ public class ObjectMover : MonoBehaviour
         if(!gameObject.tag.Equals("TailCar") && carXPos > centerPoint && !passedCenterPoint)
         {
             headMotionAnalysis.gapsGeneratedRounded.Add(waitTime);
+            if (color1 == Color.yellow || color2 == Color.yellow)
+            {
+                headMotionAnalysis.leadCarColor.Add(1);
+                Debug.Log("Yellow Car");
+            }
+            else
+            {
+                headMotionAnalysis.leadCarColor.Add(0);
+                Debug.Log("Car");
+            }
             passedCenterPoint = true;
         }
 
@@ -52,10 +62,7 @@ public class ObjectMover : MonoBehaviour
             CreatedCar();
         }
 
-        // Move the gameobject forward along the x-axis
-        gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
-
-        if(gameObject.tag == "DestroyedCar" && dataRecording)
+        else if(gameObject.tag == "DestroyedCar" && dataRecording)
         {
             DestroyCarByRoadCrossing();
             dataRecording = false;
@@ -71,6 +78,9 @@ public class ObjectMover : MonoBehaviour
             DestroyCar();
             dataRecording = false;
         }
+
+        // Move the gameobject forward along the x-axis
+        gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
 
     }
 

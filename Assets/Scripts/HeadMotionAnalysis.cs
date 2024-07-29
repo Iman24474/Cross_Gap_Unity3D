@@ -16,9 +16,11 @@ public class HeadMotionAnalysis : MonoBehaviour
     [HideInInspector] public bool roadExit; 
     [HideInInspector] public List<float> gapsGeneratedRounded = new List<float>();   
     [HideInInspector] public List<float> gapsGeneratedActual = new List<float>();   
+    [HideInInspector] public List<float> leadCarColor = new List<float>();   
     [HideInInspector] public Dictionary<float, List<float>> HeadMotionCarStream = new Dictionary<float,List<float>>();
     [HideInInspector] public Dictionary<float, List<float>> GapsSeenRounded = new Dictionary<float,List<float>>();
     [HideInInspector] public Dictionary<float, List<float>> GapsSeenActual = new Dictionary<float,List<float>>();
+    [HideInInspector] public Dictionary<float, List<float>> YellowLeadCar = new Dictionary<float,List<float>>();
     // Start is called before the first frame update
     void Start()
     {
@@ -79,9 +81,12 @@ public class HeadMotionAnalysis : MonoBehaviour
 
             ActualGapsSeenCalculator();
             GapsSeenActual.Add(trialTracker.trialNum, gapsGeneratedActual);
+
+            YellowLeadCar.Add(trialTracker.trialNum, leadCarColor);
             
             gapsGeneratedRounded = new List<float>();
             gapsGeneratedActual = new List<float>();
+            leadCarColor = new List<float>();
 
         }
 

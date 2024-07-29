@@ -8,23 +8,30 @@ using System.Text;
 public class Analysis_Output : MonoBehaviour
 {
     string myFilePath;
-	public string ParticipantId;
-    public int age;
-    public string gender;
+	string ParticipantId;
+    int age;
+    string gender;
     string date;
     int duplicate=1;
 
     HeadMotionAnalysis headMotionAnalysis;
 	StreamWriter fileWriter;
+    CarSpawner carSpawner;
+    Txt_Output txt_Output;
 
     void Awake()
     {
         headMotionAnalysis = GameObject.Find("XR Origin (XR Rig)").GetComponent<HeadMotionAnalysis>();
+        carSpawner = GameObject.Find("Car Spawner").GetComponent<CarSpawner>();
+        txt_Output = GetComponent<Txt_Output>();
 
     }
     // Start is called before the first frame update
     void Start()
     {
+        ParticipantId = txt_Output.ParticipantId;
+        age = txt_Output.age;
+        gender = txt_Output.gender;
         date = DateTime.Now.ToString();
 
 
@@ -72,20 +79,42 @@ public class Analysis_Output : MonoBehaviour
                 "Time to Spare (s): " + "\t\t\t\t\t\t" + headMotionAnalysis.HeadMotionCarStream[key][15].ToString("F4") + "\n\n" +
                 "Gaps Seen (Actual): " + "\t");
 
-                foreach(float value in headMotionAnalysis.GapsSeenActual[key])
+
+                for(int i = 0; i < headMotionAnalysis.GapsSeenActual[key].Count; i++)
                 {
-                    stringBuilder.Append(
-                        value.ToString("F4") + " | "
-                    );
+                    if(headMotionAnalysis.YellowLeadCar[key][i] == 1)
+                    {
+                       stringBuilder.Append(
+                       headMotionAnalysis.GapsSeenActual[key][i].ToString("F4") + " *| "
+                       ); 
+                    }
+                    else
+                    {
+                        stringBuilder.Append(
+                        headMotionAnalysis.GapsSeenActual[key][i].ToString("F4") + " | "
+                        );
+
+                    }
                 }
                 stringBuilder.Append("\n" +
                 "Gaps Seen (Rounded): " + "\t");
 
-                foreach(float value in headMotionAnalysis.GapsSeenRounded[key])
+
+                for(int i = 0; i < headMotionAnalysis.GapsSeenRounded[key].Count; i++)
                 {
-                    stringBuilder.Append(
-                        value.ToString("F1") + " | "
-                    );
+                    if(headMotionAnalysis.YellowLeadCar[key][i] == 1)
+                    {
+                       stringBuilder.Append(
+                       headMotionAnalysis.GapsSeenRounded[key][i].ToString("F1") + " *| "
+                       ); 
+                    }
+                    else
+                    {
+                        stringBuilder.Append(
+                        headMotionAnalysis.GapsSeenRounded[key][i].ToString("F1") + " | "
+                        );
+
+                    }
                 }
                 stringBuilder.Append("\n\n");
 
